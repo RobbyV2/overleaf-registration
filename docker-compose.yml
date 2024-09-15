@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    overleaf-registration:
+        image: ghcr.io/robbyv2/overleaf-registration
+        container_name: overleaf-registration
+        ports:
+            - 5002:5002
+        environment:
+        - HCAPTCHA_SITE_KEY=abcdef
+        - OL_INSTANCE=https://overleaf.example.com
+        - OL_ADMIN_EMAIL=overleaf@example.com
+        - OL_ADMIN_PASSWORD=xyz
+        deploy:
